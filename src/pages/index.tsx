@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import type { NextPageWithLayout } from '@/types';
 import RootLayout from '@/layouts/_root-layout';
@@ -18,6 +19,7 @@ const HomePage: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = () => {
   const { layout } = useLayout();
+
 
   // render minimal screen/page
   if (layout === LAYOUT_OPTIONS.MINIMAL) {

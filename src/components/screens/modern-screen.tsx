@@ -1,5 +1,7 @@
 import cn from 'classnames';
 import { NextSeo } from 'next-seo';
+import { useContext } from 'react';
+import { WalletContext } from '@/lib/hooks/use-connect';
 import CoinSlider from '@/components/ui/coin-card';
 import OverviewChart from '@/components/ui/chats/overview-chart';
 import LiquidityChart from '@/components/ui/chats/liquidity-chart';
@@ -15,6 +17,8 @@ import TopupButton from '@/components/ui/topup-button';
 import AuthorImage from '@/assets/images/author.jpg';
 
 export default function ModernScreen() {
+  const { portfolioBalance } = useContext(WalletContext);
+
   return (
     <>
       <NextSeo
@@ -37,7 +41,7 @@ export default function ModernScreen() {
               My Balance
             </h3>
             <div className="mb-7 text-center font-medium tracking-tighter text-gray-900 dark:text-white xl:text-2xl 3xl:mb-8 3xl:text-[32px]">
-              $10,86,000
+              {portfolioBalance}
             </div>
             <TopupButton />
           </div>

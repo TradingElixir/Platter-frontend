@@ -1,5 +1,7 @@
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
+import { useContext } from 'react';
+import { WalletContext } from '@/lib/hooks/use-connect';
 import type { NextPageWithLayout } from '@/types';
 import DashboardLayout from '@/layouts/_classic';
 import CoinSlider from '@/components/ui/coin-card-two';
@@ -25,6 +27,8 @@ export const getStaticProps: GetStaticProps = async () => {
 const ClassicPage: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = () => {
+  const { portfolioBalance } = useContext(WalletContext);
+
   return (
     <>
       <NextSeo
@@ -51,7 +55,7 @@ const ClassicPage: NextPageWithLayout<
                 My Balance
               </h3>
               <div className="mb-7 text-center font-medium tracking-tighter text-gray-900 dark:text-white xl:text-2xl 3xl:mb-8 3xl:text-[32px]">
-                $10,86,000
+                {portfolioBalance}
               </div>
 
               <TopupButton className="md:h-12 " />

@@ -1,14 +1,26 @@
-import { useEffect, useState, createContext, ReactNode } from 'react';
+import { useEffect, useState, createContext, ReactNode, useMemo } from 'react';
 import Web3Modal from 'web3modal';
+import {
+  getTokenBalances,
+  getNativeData,
+  calculatePortfolioBalance,
+} from 'src/pages/classic/api';
 import { ethers } from 'ethers';
 
 const web3modalStorageKey = 'WEB3_CONNECT_CACHED_PROVIDER';
 
 export const WalletContext = createContext<any>({});
 
+const DEFAULT_CHAIN = '0x1';
+
 export const WalletProvider = ({ children }: { children: ReactNode }) => {
   const [address, setAddress] = useState<string | undefined>(undefined);
   const [balance, setBalance] = useState<string | undefined>(undefined);
+  const [tokenBalances, setTokenBalances] = useState<any[]>([]);
+  const [nativeData, setNativeData] = useState<{
+    balance: string;
+    value: string;
+  }>({ balance: '0', value: '0' });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const web3Modal =
@@ -33,6 +45,29 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     checkConnection();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (address) {
+      getNativeData({ wallet: address, chain: DEFAULT_CHAIN }).then((data) => {
+        setNativeData(data);
+      });
+      getTokenBalances({ wallet: address, chain: DEFAULT_CHAIN }).then(
+        (data) => {
+          setTokenBalances(data);
+        }
+      );
+    }
+  }, [address]);
+
+  const portfolioBalance = useMemo(() => {
+    if (tokenBalances && nativeData) {
+      return calculatePortfolioBalance(
+        tokenBalances ?? [],
+        nativeData?.value ?? 0
+      );
+    }
+    return 0;
+  }, [tokenBalances, nativeData]);
 
   const setWalletAddress = async (provider: any) => {
     try {
@@ -111,6 +146,9 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
         balance,
         loading,
         error,
+        tokenBalances,
+        nativeData,
+        portfolioBalance,
         connectToWallet,
         disconnectWallet,
       }}
