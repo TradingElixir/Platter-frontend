@@ -44,7 +44,7 @@ export default function CreateNFTRetro() {
     <>
       <NextSeo
         title="Create NFT"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="Platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <form>
         <div className="mx-auto w-full pt-8 sm:pt-12 lg:px-8 xl:px-10 2xl:px-0">

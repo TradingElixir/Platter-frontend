@@ -8,7 +8,7 @@ const FarmsPage: NextPageWithLayout = () => {
     <>
       <NextSeo
         title="Farms"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <Farms />
     </>

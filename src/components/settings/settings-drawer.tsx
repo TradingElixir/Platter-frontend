@@ -120,7 +120,7 @@ function ThemeSwitcher() {
 
 // Component: DirectionSwitcher
 function DirectionSwitcher() {
-  const [direction, setDirection] = useLocalStorage('criptic-direction', 'ltr');
+  const [direction, setDirection] = useLocalStorage('platter-direction', 'ltr');
   useDirection(direction ? direction : 'ltr');
   return (
     <div className="px-6 pt-8">
@@ -206,7 +206,7 @@ function LayoutSwitcher() {
 // Component: ColorSwitcher
 function ColorSwitcher() {
   const [themeColor, setThemeColor] = useLocalStorage(
-    'criptic-color',
+    'platter-color',
     '#323743'
   );
   useThemeColor(themeColor ? themeColor : '#323743');

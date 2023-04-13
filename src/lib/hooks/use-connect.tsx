@@ -11,7 +11,7 @@ const web3modalStorageKey = 'WEB3_CONNECT_CACHED_PROVIDER';
 
 export const WalletContext = createContext<any>({});
 
-const DEFAULT_CHAIN = '0x1';
+const DEFAULT_CHAIN = '0xfa';
 
 export const WalletProvider = ({ children }: { children: ReactNode }) => {
   const [address, setAddress] = useState<string | undefined>(undefined);
@@ -68,6 +68,12 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     }
     return 0;
   }, [tokenBalances, nativeData]);
+
+  console.log({
+    portfolioBalance,
+    tokenBalances,
+    nativeData
+  });
 
   const setWalletAddress = async (provider: any) => {
     try {

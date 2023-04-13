@@ -14,7 +14,7 @@ const CreateNFTPage: NextPageWithLayout = () => {
       <>
         <NextSeo
           title="Create NFT"
-          description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+          description=" - React Next Web3 NFT Crypto Dashboard Template"
         />
         <CreateNFTRetro />
       </>
@@ -25,7 +25,7 @@ const CreateNFTPage: NextPageWithLayout = () => {
     <>
       <NextSeo
         title="Create NFT"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <CreateNFT />
     </>

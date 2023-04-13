@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export const cripticVotes = [
+export const platterVotes = [
   {
     id: '1',
     title: 'PTIP 50 - Treasury Assets Management #1',
@@ -845,7 +845,7 @@ export const cripticVotes = [
 
 // getVotesByStatus
 export function getVotesByStatus(status: string) {
-  const votesByStatus = cripticVotes.filter((vote) => vote.status === status);
+  const votesByStatus = platterVotes.filter((vote) => vote.status === status);
   return {
     votes: votesByStatus,
     totalVote: votesByStatus.length,

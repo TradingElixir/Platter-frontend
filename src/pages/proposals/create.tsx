@@ -20,8 +20,8 @@ const actionOptions = [
     value: 'custom_contact',
   },
   {
-    name: 'CRIPTIC Token',
-    value: 'criptic_token',
+    name: 'platter Token',
+    value: 'platter_token',
   },
   {
     name: 'Reserve',
@@ -48,7 +48,7 @@ const reserveOptions = [
   },
 ];
 
-const cripticTokenOptions = [
+const platterTokenOptions = [
   {
     name: 'Approve',
     value: 'approve',
@@ -75,7 +75,7 @@ const cripticTokenOptions = [
   },
 ];
 
-function CripticTokenAction({
+function platterTokenAction({
   selectedOption,
   onChange,
 }: {
@@ -86,7 +86,7 @@ function CripticTokenAction({
     <>
       <Listbox
         className="w-full sm:w-80"
-        options={cripticTokenOptions}
+        options={platterTokenOptions}
         selectedOption={selectedOption}
         onChange={onChange}
       />
@@ -183,8 +183,8 @@ function CripticTokenAction({
 function ActionFields() {
   let [actionType, setActionType] = useState(actionOptions[0]);
   let [reserveAction, setReserveAction] = useState(reserveOptions[0]);
-  let [cripticTokenAction, setCripticTokenAction] = useState(
-    cripticTokenOptions[0]
+  let [platterTokenAction, setplatterTokenAction] = useState(
+    platterTokenOptions[0]
   );
   return (
     <div className="">
@@ -217,11 +217,11 @@ function ActionFields() {
               placeholder="Enter contact address 0x1f9840a85..."
             />
           )}
-          {actionType.value === 'criptic_token' && (
+          {actionType.value === 'platter_token' && (
             <div className="rtl:xs:mlr6 rtl:sm:mlr12 mt-4 ltr:xs:ml-6 ltr:sm:ml-12">
-              <CripticTokenAction
-                selectedOption={cripticTokenAction}
-                onChange={setCripticTokenAction}
+              <platterTokenAction
+                selectedOption={platterTokenAction}
+                onChange={setplatterTokenAction}
               />
             </div>
           )}
@@ -255,7 +255,7 @@ const CreateProposalPage: NextPageWithLayout = () => {
     <>
       <NextSeo
         title="Create Proposal"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <section className="mx-auto w-full max-w-[1160px] text-sm sm:pt-10 4xl:py-16">
         <header className="mb-10 flex flex-col gap-4 rounded-lg bg-white p-5 py-6 shadow-card dark:bg-light-dark xs:p-6 sm:flex-row sm:items-center sm:justify-between">
@@ -269,7 +269,7 @@ const CreateProposalPage: NextPageWithLayout = () => {
               </h2>
               <p className="leading-[1.8] text-gray-600 dark:text-gray-400">
                 In order to submit a proposal you must have at least 10,000
-                CRIPTIC tokens <br className="hidden xl:inline-block" />{' '}
+                platter tokens <br className="hidden xl:inline-block" />{' '}
                 delegated to you{' '}
                 <a
                   target="_blank"

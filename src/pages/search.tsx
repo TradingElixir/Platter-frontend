@@ -24,7 +24,7 @@ const SearchPage: NextPageWithLayout<
       <>
         <NextSeo
           title="Explore NTF"
-          description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+          description="platter - React Next Web3 NFT Crypto Dashboard Template"
         />
         <RetroSearch />
       </>
@@ -36,7 +36,7 @@ const SearchPage: NextPageWithLayout<
     <>
       <NextSeo
         title="Explore NTF"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
 
       <Search />

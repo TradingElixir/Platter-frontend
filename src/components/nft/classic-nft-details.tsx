@@ -54,7 +54,7 @@ export default function ClassicNFTDetails({
     <>
       <NextSeo
         title="Classic NFT Details Page"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <div className="flex flex-grow">
         <div className="mx-auto flex w-full flex-grow flex-col transition-all xl:max-w-[1360px] 4xl:max-w-[1760px]">

@@ -9,8 +9,8 @@ import { useLayout } from '@/lib/hooks/use-layout';
 
 export default function SettingsButton() {
   const { opeSettings } = useSettingsDrawer();
-  const [direction] = useLocalStorage<string>('criptic-direction');
-  const [themeColor] = useLocalStorage<string>('criptic-color');
+  const [direction] = useLocalStorage<string>('platter-direction');
+  const [themeColor] = useLocalStorage<string>('platter-color');
   useDirection(direction ? direction : 'ltr');
   useThemeColor(themeColor ? themeColor : '#14161a');
   // set layout based on query param

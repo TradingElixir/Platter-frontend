@@ -37,7 +37,7 @@ const calculateNativeBalanceAndNativeValue = (response: any) => {
 };
 
 function processTokens(tokensList: any[]) {
-  if (!Array.isArray(tokensList) || tokensList.length === 0) return [];
+  if (!Array.isArray(tokensList)) return [];
   const tokens = tokensList.map((token: any) => ({
     ...token,
     bal: (Number(token.balance) / Number(`1E${token.decimals}`)).toFixed(3), //1E18
@@ -60,7 +60,7 @@ export const formatDigitUptoDecimalPlaces = (
   });
 };
 
-export const calculatePortfolioBalance = (tokens: any[], nativeValue: string) =>
+export const calculatePortfolioBalance = (tokens: any[], nativeValue: string) => tokens.length === 0 ? '$' + formatDigitUptoDecimalPlaces(+nativeValue, 2) :
   '$' +
   formatDigitUptoDecimalPlaces(
     tokens.reduce((acc, current, index) => {

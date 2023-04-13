@@ -32,8 +32,8 @@ const ClassicPage: NextPageWithLayout<
   return (
     <>
       <NextSeo
-        title="Criptic Classic Demo"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        title="platter Classic Demo"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <div className="flex flex-wrap">
         <div className="mb-8 w-full sm:mb-0  ">

@@ -33,8 +33,8 @@ export default function MinimalScreen() {
   return (
     <>
       <NextSeo
-        title="Criptic Minimal"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        title="platter Minimal"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <div className="mt-8">
         <PriceFeedSlider

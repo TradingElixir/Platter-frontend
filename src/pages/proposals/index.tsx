@@ -85,7 +85,7 @@ const ProposalsPage: NextPageWithLayout = () => {
     <>
       <NextSeo
         title="Proposal"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <section className="mx-auto w-full max-w-[1160px] text-sm sm:pt-10 4xl:pt-14">
         <header
@@ -108,7 +108,7 @@ const ProposalsPage: NextPageWithLayout = () => {
                 You have 100 votes
               </h2>
               <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                You need CRIPTIC or CRIPTIC tokens to participate in governance.
+                You need platter or platter tokens to participate in governance.
               </p>
             </div>
           </div>

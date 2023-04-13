@@ -1,24 +1,24 @@
 import { atom, useAtom } from 'jotai';
 import { LAYOUT_OPTIONS } from '@/lib/constants';
 
-// 1. set initial atom for criptic layout
-const cripticLayoutAtom = atom(
+// 1. set initial atom for platter layout
+const platterLayoutAtom = atom(
   typeof window !== 'undefined'
-    ? localStorage.getItem('criptic-layout')
+    ? localStorage.getItem('platter-layout')
     : LAYOUT_OPTIONS.MODERN
 );
 
-const cripticLayoutAtomWithPersistence = atom(
-  (get) => get(cripticLayoutAtom),
+const platterLayoutAtomWithPersistence = atom(
+  (get) => get(platterLayoutAtom),
   (get, set, newStorage: any) => {
-    set(cripticLayoutAtom, newStorage);
-    localStorage.setItem('criptic-layout', newStorage);
+    set(platterLayoutAtom, newStorage);
+    localStorage.setItem('platter-layout', newStorage);
   }
 );
 
 // 2. useLayout hook to check which layout is available
 export function useLayout() {
-  const [layout, setLayout] = useAtom(cripticLayoutAtomWithPersistence);
+  const [layout, setLayout] = useAtom(platterLayoutAtomWithPersistence);
   return {
     layout,
     setLayout,

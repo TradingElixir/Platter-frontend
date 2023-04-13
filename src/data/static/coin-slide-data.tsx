@@ -4,6 +4,7 @@ import TetherImage from '@/assets/images/coin/tether.svg';
 import CardanoImage from '@/assets/images/coin/cardano.svg';
 import BinanceImage from '@/assets/images/coin/binance.svg';
 
+
 export const coinSlideData = [
   {
     id: '0',

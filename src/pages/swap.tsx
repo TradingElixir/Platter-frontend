@@ -15,7 +15,7 @@ const SwapPage: NextPageWithLayout = () => {
     <>
       <NextSeo
         title="Farms"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
+        description="platter - React Next Web3 NFT Crypto Dashboard Template"
       />
       <Trade>
         <div className="mb-5 border-b border-dashed border-gray-200 pb-5 dark:border-gray-800 xs:mb-7 xs:pb-6">
@@ -56,7 +56,7 @@ const SwapPage: NextPageWithLayout = () => {
           <TransactionInfo label={'Offered by'} />
           <TransactionInfo label={'Price Slippage'} value={'1%'} />
           <TransactionInfo label={'Network Fee'} />
-          <TransactionInfo label={'Criptic Fee'} />
+          <TransactionInfo label={'platter Fee'} />
         </div>
         <Button
           size="large"
